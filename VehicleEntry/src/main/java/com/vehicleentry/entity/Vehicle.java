@@ -2,15 +2,18 @@ package com.vehicleentry.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import org.springframework.stereotype.Component;
 
 @Entity
-@Table (name = "vehicle")
+@Table(name="vehicles")
+@Component
 public class Vehicle {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 	private String make;
 	private String model;
@@ -18,8 +21,7 @@ public class Vehicle {
 	private String vehiclePlate;
 	private String engine;
 	
-	
-	
+		
 	public Vehicle() {
 		super();
 	}
